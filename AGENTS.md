@@ -4,7 +4,7 @@ This file contains instructions for AI agents (coding assistants) working on thi
 Please read this carefully before generating code or executing commands.
 
 ## 1. Project Overview
-**Status:** Phase 3 Complete (CI/CD, Footer, Tests, License).
+**Status:** Phase 3 Complete (CI/CD, Footer, Tests, License, Favicon & Title).
 **Description:** A Spanish-centric web application to calculate the optimal start date for kindergarten ("guardería") based on parental leave ("baja"), breastfeeding leave ("lactancia"), and PTO ("vacaciones").
 **Goal:** Provide an easy-to-use tool for new parents in Spain to visualize their leave timeline.
 
