@@ -4,7 +4,7 @@ This file contains instructions for AI agents (coding assistants) working on thi
 Please read this carefully before generating code or executing commands.
 
 ## 1. Project Overview
-**Status:** Phase 2 Complete (Cleanup, Dark Mode, Documentation).
+**Status:** Phase 3 Complete (CI/CD, Footer, Tests, License).
 **Description:** A Spanish-centric web application to calculate the optimal start date for kindergarten ("guardería") based on parental leave ("baja"), breastfeeding leave ("lactancia"), and PTO ("vacaciones").
 **Goal:** Provide an easy-to-use tool for new parents in Spain to visualize their leave timeline.
 
@@ -15,12 +15,14 @@ Please read this carefully before generating code or executing commands.
 - **Styling:** Tailwind CSS (Shadcn/UI-inspired components) + `lucide-react` (icons)
 - **Date Logic:** `date-fns` (Local: `es`) + `date-holidays` (Spanish holidays)
 - **Calendar:** `react-day-picker` (v9)
+- **Testing:** `vitest`
 
 **Commands:**
 - **Install:** `npm install`
 - **Dev Server:** `npm run dev` (Runs on localhost:5173)
 - **Build:** `npm run build` (Outputs to `dist/`)
 - **Preview:** `npm run preview`
+- **Test:** `npm test`
 
 ## 3. Project Structure
 
