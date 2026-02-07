@@ -1,45 +1,42 @@
-# Session Summary (Phase 1 Complete)
+# Session Summary (Phase 2 Complete)
 
 ## What We Did
-We successfully built a **Spanish Kindergarten Start Date Calculator** (*¿Cuándo empieza la guardería?*) from scratch.
+We successfully completed **Phase 2** of the development:
 
-1.  **Core Logic:** Implemented a calculator that maximizes parental presence (Mandatory -> Mother Voluntary -> Father Voluntary -> Breastfeeding -> PTO). It distinguishes between **calendar weeks** (standard leave) and **working days** (breastfeeding/PTO), ensuring holidays and weekends extend the return date correctly.
-2.  **UI/UX:** Created a responsive interface with a collapsible sidebar, a visual calendar (showing 6-8 months), and a clear "Result Card".
-3.  **Holidays:** Integrated the `date-holidays` library to handle National and Regional (CCAA) holidays automatically. Added a feature to click on calendar days to toggle "local" holidays manually.
-4.  **Custom Components:** Built a lightweight, dependency-free `ColorPicker` for customizing the calendar visualization.
-5.  **Visual Polish:** Added weekend greying, "baby" emoji markers, weekend end-date warnings, and a pastel color theme.
-6.  **Documentation:** Created a comprehensive `AGENTS.md` file with the project context.
+1.  **Cleanup:** Removed unused files (`src/App.css`, `src/assets/react.svg`, `public/vite.svg`).
+2.  **Documentation:** Created a clear `README.md` with setup instructions and feature overview.
+3.  **Dark Mode:** Implemented a robust Dark/Light mode with system preference detection and persistence.
+    *   Added `src/components/ThemeToggle.tsx`.
+    *   Configured Tailwind `darkMode: 'class'`.
+    *   Fixed visibility issues for calendar icons and select dropdowns in dark mode.
+4.  **UI Refinement:** Reduced the sidebar width to improve layout balance on desktop.
 
 ## Prompt for the Next Session
 
 **Copy and paste the following into the next chat session to resume work immediately:**
 
 ```markdown
-I am continuing development on a React/TypeScript project called "Cuando Empieza La Guarderia". It is a calculator for new parents in Spain to determine the optimal date to start kindergarten based on parental leave laws.
+I am continuing development on a React/TypeScript project called "Cuando Empieza La Guarderia".
 
-**Current Project Status (Phase 1 Complete):**
+**Current Project Status (Phase 2 Complete):**
 - The app is a single-page application using Vite, React, Tailwind CSS, `date-fns`, `date-holidays`, and `react-day-picker`.
-- **Core Logic:** Located in `src/lib/calculator.ts`. It calculates a timeline combining:
-  1. Mandatory Leave (6 weeks).
-  2. Voluntary Leave (Mother + Father, sequential).
-  3. Lactancia (Breastfeeding) & Vacaciones (PTO) - calculated as *working days* (skipping weekends/holidays).
-- **Holidays:** Managed in `src/lib/holidays.ts` and `App.tsx`. Users can select a Region (CCAA) for auto-holidays or click calendar days for manual local holidays.
-- **UI:** A responsive layout with a collapsible sidebar and a custom `ColorPicker` component.
+- **Features:**
+  - Timeline calculator (Mandatory -> Voluntary -> Breastfeeding -> PTO).
+  - Holiday handling (Auto + Manual).
+  - Dark/Light Mode with persistence.
+  - Visual Calendar & Result Card.
+- **Recent Changes:** Cleaned up files, added README, implemented Dark Mode, refined UI layout.
 
 **Key Files:**
-- `src/App.tsx`: Main UI and state management (birth date, settings, manual holidays).
-- `src/lib/calculator.ts`: Timeline generation logic.
-- `src/components/ColorPicker.tsx`: Custom pastel color selector.
-- `AGENTS.md`: Contains the project overview and coding standards.
+- `src/App.tsx`: Main UI.
+- `src/lib/calculator.ts`: Timeline logic.
+- `src/components/ThemeToggle.tsx`: Theme logic.
+- `src/index.css`: Global styles (including Dark Mode overrides).
+- `AGENTS.md`: Project context.
 
-**Technical Constraints & User Preferences:**
-- **Language:** The UI must remain in Spanish.
-- **Logic:** "Bajas" (Leave) are calendar weeks. "Lactancia/Vacaciones" are working days.
-- **Visuals:** Keep the pastel aesthetic (Tailwind 200 series).
-- **Holidays:** Calculations MUST respect the `isHoliday` check to correctly extend working-day leaves.
-
-**Immediate Goals / Next Steps:**
-Please review `AGENTS.md` to understand the context. I would like to discuss:
-1. Validating the current build.
-2. Discussing potential "Phase 2" features (e.g., splitting leave into non-sequential blocks, saving configuration to local storage, or deploying to GitHub Pages).
+**Immediate Goals (Phase 3):**
+Please review `AGENTS.md`. I would like to implement:
+1.  **Persistence:** Save user configuration (weeks, dates, holidays) to `localStorage` so data isn't lost on refresh.
+2.  **Advanced Logic (Optional):** Discuss if we need to support splitting leave into non-sequential blocks (current logic assumes sequential).
+3.  **Deployment:** Prepare for GitHub Pages deployment.
 ```

@@ -4,7 +4,7 @@ This file contains instructions for AI agents (coding assistants) working on thi
 Please read this carefully before generating code or executing commands.
 
 ## 1. Project Overview
-**Status:** Phase 1 Complete (Basic functionality, visual calendar, holiday handling).
+**Status:** Phase 2 Complete (Cleanup, Dark Mode, Documentation).
 **Description:** A Spanish-centric web application to calculate the optimal start date for kindergarten ("guardería") based on parental leave ("baja"), breastfeeding leave ("lactancia"), and PTO ("vacaciones").
 **Goal:** Provide an easy-to-use tool for new parents in Spain to visualize their leave timeline.
 
@@ -29,6 +29,7 @@ Please read this carefully before generating code or executing commands.
     - **Logic:** "Bajas" are calendar weeks (continuous). "Lactancia"/"Vacaciones" are working days (skip weekends/holidays).
 - `src/lib/holidays.ts`: Wrapper around `date-holidays` to manage National and Regional (CCAA) holidays.
 - `src/components/ColorPicker.tsx`: Custom lightweight color swatch picker.
+- `src/components/ThemeToggle.tsx`: Dark/Light mode switcher.
 - `src/lib/utils.ts`: standard `cn` helper for Tailwind class merging.
 
 ## 4. Business Logic & Rules (Spain 2025/2026)
@@ -54,7 +55,7 @@ Please read this carefully before generating code or executing commands.
 -   **Calendar:**
     -   Shows 6 months by default (8 when sidebar closed, 1 on mobile).
     -   Clicking a day toggles it as a custom holiday.
--   **Theme:** Clean, pastel colors (Tailwind 200 series) for leave periods.
+-   **Theme:** Clean, pastel colors (Tailwind 200 series) for leave periods. Supports Dark Mode (Zinc palette).
 -   **Accessibility:** Ensure text contrast (dark text on pastel backgrounds).
 
 ## 6. Agent Workflow Rules

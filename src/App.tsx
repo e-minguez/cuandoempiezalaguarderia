@@ -8,6 +8,7 @@ import { Settings, ChevronLeft, RotateCcw } from 'lucide-react';
 import { calculateTimeline } from './lib/calculator';
 import { cn } from './lib/utils';
 import { ColorPicker } from './components/ColorPicker';
+import { ThemeToggle } from './components/ThemeToggle';
 import { REGIONS, initHolidays, isHoliday as checkHoliday } from './lib/holidays';
 
 // UI Components
@@ -219,7 +220,13 @@ export default function App() {
     <div className="min-h-screen bg-background p-4 md:p-8 font-sans">
       <div className="max-w-[1600px] mx-auto space-y-8">
         
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-2 relative">
+          <div className="absolute right-0 top-0 hidden md:block">
+            <ThemeToggle />
+          </div>
+          <div className="flex justify-center md:hidden mb-2">
+             <ThemeToggle />
+          </div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">
             ¿Cuándo empieza la guardería? 👶
           </h1>
@@ -231,7 +238,7 @@ export default function App() {
         <div className="flex flex-col md:flex-row gap-6 items-start">
           
           {/* Sidebar Area */}
-          <div className={cn("transition-all duration-300 ease-in-out shrink-0", isSidebarOpen ? "w-full md:w-[280px]" : "w-full md:w-[60px]")}>
+          <div className={cn("transition-all duration-300 ease-in-out shrink-0", isSidebarOpen ? "w-full md:w-[240px]" : "w-full md:w-[60px]")}>
             
             {/* Mobile Toggle */}
             <div className="flex justify-between items-center md:hidden mb-4">

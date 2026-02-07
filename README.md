@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# 👶 ¿Cuándo empieza la guardería?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, focused calculator for new parents in Spain to determine the optimal date to start kindergarten ("guardería") or childcare. It calculates the timeline by maximizing parental leave coverage.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Optimal Timeline Calculation**:
+    *   **Baja Obligatoria**: 6 weeks (mother + father simultaneously).
+    *   **Baja Voluntaria**: Remaining weeks sequential (Mother then Father) to maximize coverage.
+    *   **Lactancia (Breastfeeding)**: Calculated in *working days* (skipping weekends/holidays).
+    *   **Vacaciones (PTO)**: Calculated in *working days*.
+*   **Holiday Management**:
+    *   **Automatic**: Integration with `date-holidays` for National and Regional (CCAA) holidays.
+    *   **Manual**: Click any day on the calendar to toggle it as a local holiday.
+*   **Visual Calendar**:
+    *   6-month view (expandable) to visualize the entire leave period.
+    *   Color-coded periods (Mandatory, Mother, Father, Breastfeeding, PTO).
+    *   Weekend and holiday highlighting.
+*   **Privacy Focused**: All calculations happen in your browser. No data is sent to any server.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Framework**: [Vite](https://vitejs.dev/) + [React](https://react.dev/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [Lucide React](https://lucide.dev/) (Icons)
+*   **Date Logic**:
+    *   [`date-fns`](https://date-fns.org/)
+    *   [`date-holidays`](https://github.com/commenthol/date-holidays)
+    *   [`react-day-picker`](https://react-day-picker.js.org/)
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 License
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+MIT
