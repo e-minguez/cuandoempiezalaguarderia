@@ -459,6 +459,33 @@ export default function App() {
             </div>
           </div>
         </div>
+        
+        <footer className="mt-12 mb-8 flex flex-col items-center gap-4 text-sm text-muted-foreground">
+          <p>
+            Vibecoded with <span className="text-red-500">♥</span> by{' '}
+            <a 
+              href="https://www.eduardominguez.es" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+            >
+              Eduardo Mínguez
+            </a>
+          </p>
+          <a 
+            href="https://librecounter.org/referer/show" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="opacity-80 hover:opacity-100 transition-opacity"
+          >
+            <img 
+              src="https://librecounter.org/oldStyle.svg" 
+              referrerPolicy="unsafe-url" 
+              alt="LibreCounter" 
+              className="dark:invert"
+            />
+          </a>
+        </footer>
       </div>
     </div>
   );
